@@ -9,7 +9,7 @@ changeResolutionButton.addEventListener('click', function () {
     if (newSize > 100) {
         alert("Maximum allowed is 100");
     } else if (newSize <= 0) {
-        alert("Grid size cannot be 0");
+        alert("Grid size cannot be less then or equal to 0!");
     } else if (newSize > 0 && newSize <= 100) {
         const rows = document.querySelectorAll('.row');
         rows.forEach((row) => {
@@ -32,11 +32,11 @@ resetButton.addEventListener('click', function () {
 
 function createGrid(size) {
 
-    for (let col = 0; col < size; col++) {
+    for (let row = 0; row < size; row++) {
         const rowContainer = document.createElement('div');
         rowContainer.classList.add('row');
 
-        for (let row = 0; row < size; row++) {
+        for (let col = 0; col < size; col++) {
             const square = document.createElement('div');
             square.classList.add('row-square');
             rowContainer.appendChild(square);
